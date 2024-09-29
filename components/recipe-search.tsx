@@ -46,7 +46,7 @@
       setRecipes([]); // Clear previous recipes
       try {
         const response = await fetch(
-          `https://api.edamam.com/search?q=${query}&app_id=${process.env.NEXT_PUBLIC_EDAMAM_APP_ID}&app_key=${process.env.NEXT_PUBLIC_EDAMAM_APP_KEY}`
+          `http://api.edamam.com/search?q=${query}&app_id=${process.env.NEXT_PUBLIC_EDAMAM_APP_ID}&app_key=${process.env.NEXT_PUBLIC_EDAMAM_APP_KEY}`
         );
         const data = await response.json();
         setRecipes(data.hits.map((hit: { recipe: Recipe }) => hit.recipe));
